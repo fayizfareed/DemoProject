@@ -14,8 +14,8 @@ namespace DemoProject.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-       //private string constring = @"Data Source=FAYIZFAREED;Initial Catalog=Demo;User ID=sa;Password=cool";
-        private string constring = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Demo;Integrated Security=True";
+        private string constring = @"Data Source=FAYIZFAREED;Initial Catalog=Demo;User ID=sa;Password=cool_nothing";
+        //private string constring = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Demo;Integrated Security=True";
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
