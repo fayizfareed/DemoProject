@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+}
+@model System.Data.DataTable
+@using System.Data;
+<h1 class="display-4">Demo Application (Job)</h1>
+<table>
+    <thead>
+        <tr>
+            @{
+                int indheader = 0;
+            }
+            @foreach (DataColumn col in Model.Columns)
+            {
+                if (indheader == 5)
+                {
+                    <th>Complete</th>
+                    indheader = 0;
+                }
+                else
+                {
+                    <th>@col.ColumnName</th>
+                    indheader = indheader + 1;
+                }
+
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow row in Model.Rows)
+        {
+            <tr>
+                @{
+                    int ind = 0;
+                }
+                @foreach (DataColumn col in Model.Columns)
+                {
+                    if (ind == 5)
+                    {
+                        <td><a href="https://localhost:44302/Home/Update/@row[col.ColumnName]">Complete</a></td>
+                        ind = 0;
+                    }
+                    else
+                    {
+                        <td>@row[col.ColumnName]</td>
+                        ind = ind + 1;
+                    }
+                }
+            </tr>
+
+        }
+    </tbody>
+</table>
+<div class="text-center">
+
+</div>
